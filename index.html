@@ -7,67 +7,110 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #f5f5f4; }
+        body { font-family: 'Cairo', sans-serif; background-color: #121212; color: #e5e5e5; }
         .khat-arabi { font-family: 'Amiri', serif; }
-        .hero-gradient { background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%); }
+        .red-glow { text-shadow: 0 0 10px rgba(220, 38, 38, 0.7); }
     </style>
 </head>
-<body class="text-gray-900">
+<body class="bg-zinc-900">
 
-    <nav class="bg-black text-white p-4 shadow-lg">
+    <nav class="bg-black border-b border-red-900 p-4 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="khat-arabi text-2xl font-bold tracking-wide">الويسكي روبير 🥃</h1>
-            <div class="space-x-4 space-x-reverse hidden md:flex">
-                <a href="#" class="hover:text-red-500">البداية</a>
-                <a href="#" class="hover:text-red-500">القصة</a>
-                <a href="#" class="hover:text-red-500">الأرقام</a>
+            <h1 class="khat-arabi text-2xl font-bold text-red-500 tracking-wider">الويسكي روبير 🥃</h1>
+            <div class="space-x-6 space-x-reverse hidden md:flex text-sm font-bold">
+                <a href="#" class="hover:text-red-500 transition">البداية</a>
+                <a href="#story" class="hover:text-red-500 transition">القصة</a>
+                <a href="#gallery" class="hover:text-red-500 transition">الصور</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-gradient text-white py-20 px-6">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <span class="bg-red-600 px-3 py-1 rounded-full text-sm font-bold mb-4 inline-block">قصة حقيقية</span>
-                <h2 class="khat-arabi text-5xl md:text-7xl font-bold mb-6 leading-tight">أتيلا أمبروس <br> <span class="text-red-500">الويسكي روبير</span></h2>
-                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                    من حارس مرمى فاشل فالهوكي لأشهر سارق بنكات فالمجر. كان كيشرب كاس ديال الويسكي قبل كل سرقة، وكيعطي الورد للموظفات.
+    <header class="relative py-24 px-6 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black via-zinc-900 to-red-900 opacity-50 z-0"></div>
+        
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <span class="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold mb-6 inline-block shadow-lg shadow-red-500/50">قصة حقيقية</span>
+                <h2 class="khat-arabi text-6xl md:text-8xl font-bold mb-6 leading-tight red-glow text-white">
+                    أتيلا أمبروس <br> <span class="text-red-600">الويسكي روبير</span>
+                </h2>
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed max-w-lg">
+                    من حارس مرمى فاشل فالهوكي لأشهر سارق بنكات فالمجر. كان كيشرب كاس ديال الويسكي قبل كل سرقة.
                 </p>
-                <button class="bg-white text-black px-8 py-3 rounded-lg font-bold hover:bg-red-500 hover:text-white transition duration-300">بدأ القراءة</button>
+                <a href="#story" class="bg-red-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition duration-300 inline-block shadow-lg">اقرأ القصة الكاملة</a>
             </div>
             
-            <div class="md:w-1/3 bg-white text-black p-8 rounded-sm shadow-2xl transform rotate-2 border-t-8 border-red-600">
-                <h3 class="khat-arabi text-3xl font-bold mb-6 border-b-2 border-black pb-2">ملف الشرطة</h3>
-                <div class="space-y-4 text-lg">
-                    <p><strong>الاسم:</strong> أتيلا أمبروس</p>
-                    <p><strong>اللقب:</strong> الويسكي روبير</p>
-                    <p><strong>المهنة:</strong> حارس هوكي / سارق</p>
-                    <p class="text-red-600 font-bold"><strong>عدد السرقات:</strong> 30 عملية</p>
+            <div class="md:w-1/3 bg-white text-black p-6 rounded-sm shadow-2xl transform rotate-3 border-4 border-dashed border-red-600 relative">
+                <div class="absolute -top-3 -right-3 bg-red-600 text-white px-3 py-1 font-bold text-xs uppercase transform rotate-12">مطلوب للعدالة</div>
+                <h3 class="khat-arabi text-3xl font-bold mb-6 text-center border-b-2 border-black pb-2">ملف الشرطة</h3>
+                <div class="space-y-3 text-lg font-mono" dir="rtl">
+                    <div class="flex justify-between border-b border-gray-300 pb-1">
+                        <span class="font-bold">الاسم:</span> <span>أتيلا أمبروس</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-300 pb-1">
+                        <span class="font-bold">اللقب:</span> <span>الويسكي روبير</span>
+                    </div>
+                    <div class="flex justify-between pt-2">
+                        <span class="font-bold text-red-600">عدد السرقات:</span> <span class="bg-black text-white px-2 rounded">30 عملية</span>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="py-16 container mx-auto px-6">
-        <h3 class="khat-arabi text-4xl font-bold text-center mb-12 italic">علاش هاد القصة واعرة؟</h3>
+    <section id="story" class="py-20 bg-zinc-800 container mx-auto px-6 rounded-3xl my-10 shadow-2xl">
+        <h3 class="khat-arabi text-4xl font-bold text-center mb-12 text-red-500">علاش هاد القصة واعرة؟</h3>
         <div class="grid md:grid-cols-3 gap-8 text-center">
-            <div class="p-6 bg-white rounded-xl shadow-md border-b-4 border-red-500">
-                <div class="text-4xl mb-4 text-red-500">🏦</div>
-                <h4 class="font-bold text-xl mb-2">سرقات ذكية</h4>
-                <p>ما عمره قتل حد، وكان كيخطط للهروب بطرق غريبة خلات الشرطة تدوخ.</p>
+            <div class="p-8 bg-black rounded-xl border border-zinc-700 hover:border-red-500 transition duration-300">
+                <div class="text-5xl mb-6">🏦</div>
+                <h4 class="font-bold text-2xl mb-4 text-red-400">سرقات ذكية</h4>
+                <p class="text-gray-400 leading-relaxed">ما عمره قتل شي واحد، وكان كيخطط للهروب بطرق غريبة خلات الشرطة تدوخ معاه لسنوات.</p>
             </div>
-            <div class="p-6 bg-white rounded-xl shadow-md border-b-4 border-red-500">
-                <div class="text-4xl mb-4 text-red-500">🌹</div>
-                <h4 class="font-bold text-xl mb-2">رومانسية اللصوص</h4>
-                <p>كان كيجيب الورد للموظفات قبل ما يسرق البنكة، هادشي اللي خلاه يولي بطل شعبي.</p>
+            <div class="p-8 bg-black rounded-xl border border-zinc-700 hover:border-red-500 transition duration-300">
+                <div class="text-5xl mb-6">🌹</div>
+                <h4 class="font-bold text-2xl mb-4 text-red-400">رومانسية اللصوص</h4>
+                <p class="text-gray-400 leading-relaxed">كان كيجيب الورد للموظفات قبل ما يسرق البنكة، هادشي اللي خلاه يولي بطل شعبي عند الناس.</p>
             </div>
-            <div class="p-6 bg-white rounded-xl shadow-md border-b-4 border-red-500">
-                <div class="text-4xl mb-4 text-red-500">⛸️</div>
-                <h4 class="font-bold text-xl mb-2">حياة مزدوجة</h4>
-                <p>بالنهار حارس مرمى في فرقة مشهورة، وبالليل "جنتلمان" سارق للبنكات.</p>
+            <div class="p-8 bg-black rounded-xl border border-zinc-700 hover:border-red-500 transition duration-300">
+                <div class="text-5xl mb-6">⛸️</div>
+                <h4 class="font-bold text-2xl mb-4 text-red-400">حياة مزدوجة</h4>
+                <p class="text-gray-400 leading-relaxed">بالنهار حارس مرمى فاشل في فرقة مشهورة، وبالليل "جنتلمان" سارق محترف للبنكات.</p>
             </div>
         </div>
     </section>
+
+    <section id="gallery" class="py-20 bg-black text-white border-t border-zinc-800">
+        <div class="container mx-auto px-6">
+            <h3 class="khat-arabi text-4xl font-bold text-center mb-16 text-red-500">من أرشيف الجريمة</h3>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-xl border border-zinc-700">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Ambrus_Attila.jpg" alt="أتيلا أمبروس" class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
+                        <h4 class="text-xl font-bold text-red-400">أتيلا الحقيقي</h4>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl border border-zinc-700">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Whisky_on_rocks.jpg/640px-Whisky_on_rocks.jpg" alt="ويسكي" class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
+                        <h4 class="text-xl font-bold text-red-400">طقوس السرقة</h4>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl border border-zinc-700">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Ice_hockey_goalie.jpg/640px-Ice_hockey_goalie.jpg" alt="هوكي" class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
+                        <h4 class="text-xl font-bold text-red-400">حارس المرمى</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-zinc-900 py-8 text-center border-t border-zinc-800">
+        <p class="text-gray-500 font-mono text-sm">Design by Othmane & Gemini AI © 2026</p>
+    </footer>
 
 </body>
 </html>
