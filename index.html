@@ -4,542 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أتيلا أمبروس: الويسكي روبير</title>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f5f5f4; /* warm gray 100 */
-        }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #e7e5e4;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #78716c;
-            border-radius: 4px;
-        }
-
-        .chart-container {
-            position: relative;
-            margin: auto;
-            height: 300px;
-            width: 100%;
-            max-height: 400px;
-        }
-
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-
-        .card-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
-        .tab-active {
-            border-bottom: 3px solid #dc2626; /* red-600 */
-            color: #dc2626;
-            font-weight: 700;
-        }
-
-        .timeline-point {
-            transition: all 0.3s ease;
-        }
-        .timeline-point:hover {
-            transform: scale(1.2);
-            background-color: #dc2626;
-        }
+        body { font-family: 'Cairo', sans-serif; background-color: #f5f5f4; }
+        .khat-arabi { font-family: 'Amiri', serif; }
+        .hero-gradient { background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%); }
     </style>
 </head>
-<body class="text-stone-800">
+<body class="text-gray-900">
 
-    <!-- Navigation -->
-    <nav class="bg-stone-900 text-stone-100 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="font-bold text-xl md:text-2xl flex items-center gap-2">
-                <span>🥃</span>
-                <span>الويسكي روبير</span>
+    <nav class="bg-black text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="khat-arabi text-2xl font-bold tracking-wide">الويسكي روبير 🥃</h1>
+            <div class="space-x-4 space-x-reverse hidden md:flex">
+                <a href="#" class="hover:text-red-500">البداية</a>
+                <a href="#" class="hover:text-red-500">القصة</a>
+                <a href="#" class="hover:text-red-500">الأرقام</a>
             </div>
-            <div class="hidden md:flex gap-6 text-sm font-semibold">
-                <button onclick="scrollToSection('hero')" class="hover:text-red-400 transition">البداية</button>
-                <button onclick="scrollToSection('timeline')" class="hover:text-red-400 transition">القصة</button>
-                <button onclick="scrollToSection('stats')" class="hover:text-red-400 transition">الأرقام</button>
-                <button onclick="scrollToSection('aftermath')" class="hover:text-red-400 transition">النهاية</button>
-            </div>
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl" onclick="toggleMobileMenu()">☰</button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-stone-800 px-4 py-2 border-t border-stone-700">
-            <button onclick="scrollToSection('hero')" class="block w-full text-right py-2 hover:text-red-400">البداية</button>
-            <button onclick="scrollToSection('timeline')" class="block w-full text-right py-2 hover:text-red-400">القصة</button>
-            <button onclick="scrollToSection('stats')" class="block w-full text-right py-2 hover:text-red-400">الأرقام</button>
-            <button onclick="scrollToSection('aftermath')" class="block w-full text-right py-2 hover:text-red-400">النهاية</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="hero" class="relative bg-stone-200 overflow-hidden">
-        <div class="absolute inset-0 opacity-10 pattern-dots"></div> 
-        <div class="container mx-auto px-4 py-12 md:py-20 flex flex-col md:flex-row items-center gap-10">
-            <div class="w-full md:w-1/2 space-y-6 z-10">
-                <span class="inline-block bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wide">قصة حقيقية</span>
-                <h1 class="text-4xl md:text-6xl font-black leading-tight text-stone-900">
-                    أتيلا أمبروس <br>
-                    <span class="text-red-700">الويسكي روبير</span>
-                </h1>
-                <p class="text-lg md:text-xl text-stone-700 leading-relaxed font-medium">
-                    من حارس مرمى فاشل فالهوكي لأشهر سارق بنكات فالمجر. كان كيشرب كاس ديال الويسكي قبل كل سرقة، وكيعطي الورد للموظفات. هادي هي قصة "الجنتلمان الشفار".
+    <header class="hero-gradient text-white py-20 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <span class="bg-red-600 px-3 py-1 rounded-full text-sm font-bold mb-4 inline-block">قصة حقيقية</span>
+                <h2 class="khat-arabi text-5xl md:text-7xl font-bold mb-6 leading-tight">أتيلا أمبروس <br> <span class="text-red-500">الويسكي روبير</span></h2>
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    من حارس مرمى فاشل فالهوكي لأشهر سارق بنكات فالمجر. كان كيشرب كاس ديال الويسكي قبل كل سرقة، وكيعطي الورد للموظفات.
                 </p>
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <button onclick="scrollToSection('timeline')" class="bg-stone-900 text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition shadow-lg transform hover:-translate-y-1">
-                        بداية القصة
-                    </button>
-                    <div class="flex items-center gap-2 text-stone-600 font-semibold px-4 py-3">
-                        <span>📍 بودابست، المجر</span>
-                        <span>🗓️ 1993-1999</span>
-                    </div>
-                </div>
+                <button class="bg-white text-black px-8 py-3 rounded-lg font-bold hover:bg-red-500 hover:text-white transition duration-300">بدأ القراءة</button>
             </div>
             
-            <div class="w-full md:w-1/2 flex justify-center relative">
-                <!-- Visual Representation using CSS/HTML -->
-                <div class="bg-white p-6 rounded-sm shadow-2xl rotate-3 transform border-4 border-stone-800 w-full max-w-md">
-                    <div class="border-b-2 border-stone-200 pb-4 mb-4 flex justify-between items-center">
-                        <h3 class="font-bold text-2xl uppercase tracking-tighter">ملف الشرطة</h3>
-                        <span class="text-red-600 font-bold border-2 border-red-600 px-2 py-0.5 rounded rotate-12 text-sm">مطلوب</span>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex justify-between border-b border-dotted border-stone-400 pb-2">
-                            <span class="text-stone-500">الاسم:</span>
-                            <span class="font-bold">أتيلا أمبروس</span>
-                        </div>
-                        <div class="flex justify-between border-b border-dotted border-stone-400 pb-2">
-                            <span class="text-stone-500">اللقب:</span>
-                            <span class="font-bold">الويسكي روبير</span>
-                        </div>
-                        <div class="flex justify-between border-b border-dotted border-stone-400 pb-2">
-                            <span class="text-stone-500">المهنة:</span>
-                            <span class="font-bold">حارس هوكي / سارق</span>
-                        </div>
-                        <div class="flex justify-between border-b border-dotted border-stone-400 pb-2">
-                            <span class="text-stone-500">عدد السرقات:</span>
-                            <span class="font-bold text-red-600">30 عملية</span>
-                        </div>
-                        <div class="bg-stone-100 p-4 rounded text-center text-4xl mt-6">
-                            🏒 🥃 💰
-                        </div>
-                    </div>
+            <div class="md:w-1/3 bg-white text-black p-8 rounded-sm shadow-2xl transform rotate-2 border-t-8 border-red-600">
+                <h3 class="khat-arabi text-3xl font-bold mb-6 border-b-2 border-black pb-2">ملف الشرطة</h3>
+                <div class="space-y-4 text-lg">
+                    <p><strong>الاسم:</strong> أتيلا أمبروس</p>
+                    <p><strong>اللقب:</strong> الويسكي روبير</p>
+                    <p><strong>المهنة:</strong> حارس هوكي / سارق</p>
+                    <p class="text-red-600 font-bold"><strong>عدد السرقات:</strong> 30 عملية</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Introduction Context -->
-    <section class="container mx-auto px-4 py-10 max-w-4xl text-center">
-        <h2 class="text-2xl font-bold mb-4 text-stone-800">علاش هاد القصة واعرة؟</h2>
-        <p class="text-lg text-stone-600 leading-relaxed">
-            فالتسعينات، المجر كانت خارجة من الشيوعية والدنيا مخلطة. بان أتيلا أمبروس، واحد الراجل ما كيخافش، كيسرق البنكات ومكاتب البريد بلا ما يضرب حتى واحد. البوليس كيجريو موراه وهو ديما سابقهم بخطوة. الناس ولاو كيبغوه حيت كان كيبان فحال شي بطل شعبي ضد النظام الفاسد. هنا غادي تكتشف التفاصيل ديال حياتو الغريبة.
-        </p>
-    </section>
-
-    <!-- Timeline Section (Interactive) -->
-    <section id="timeline" class="bg-white py-16 border-y border-stone-200">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-10">
-                <div>
-                    <h2 class="text-3xl font-black text-stone-900 mb-2">الخط الزمني للأحداث</h2>
-                    <p class="text-stone-500">كليكي على السنوات باش تعرف شنو وقع</p>
-                </div>
-                <div class="text-4xl text-stone-200 hidden md:block font-black">1967 - 2012</div>
+    <section class="py-16 container mx-auto px-6">
+        <h3 class="khat-arabi text-4xl font-bold text-center mb-12 italic">علاش هاد القصة واعرة؟</h3>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="p-6 bg-white rounded-xl shadow-md border-b-4 border-red-500">
+                <div class="text-4xl mb-4 text-red-500">🏦</div>
+                <h4 class="font-bold text-xl mb-2">سرقات ذكية</h4>
+                <p>ما عمره قتل حد، وكان كيخطط للهروب بطرق غريبة خلات الشرطة تدوخ.</p>
             </div>
-
-            <!-- Scrollable Timeline Nav -->
-            <div class="flex gap-4 overflow-x-auto pb-6 mb-8 no-scrollbar" id="timeline-nav">
-                <!-- Generated by JS -->
+            <div class="p-6 bg-white rounded-xl shadow-md border-b-4 border-red-500">
+                <div class="text-4xl mb-4 text-red-500">🌹</div>
+                <h4 class="font-bold text-xl mb-2">رومانسية اللصوص</h4>
+                <p>كان كيجيب الورد للموظفات قبل ما يسرق البنكة، هادشي اللي خلاه يولي بطل شعبي.</p>
             </div>
-
-            <!-- Dynamic Content Area -->
-            <div class="bg-stone-50 rounded-2xl p-8 shadow-inner border border-stone-200 min-h-[300px] flex flex-col md:flex-row gap-8 transition-all duration-300" id="timeline-content">
-                <!-- Content injected by JS -->
+            <div class="p-6 bg-white rounded-xl shadow-md border-b-4 border-red-500">
+                <div class="text-4xl mb-4 text-red-500">⛸️</div>
+                <h4 class="font-bold text-xl mb-2">حياة مزدوجة</h4>
+                <p>بالنهار حارس مرمى في فرقة مشهورة، وبالليل "جنتلمان" سارق للبنكات.</p>
             </div>
         </div>
     </section>
 
-    <!-- Stats & Data Section -->
-    <section id="stats" class="container mx-auto px-4 py-16">
-        <div class="text-center mb-12">
-            <span class="text-red-600 font-bold uppercase tracking-wider text-sm">تحليل البيانات</span>
-            <h2 class="text-3xl md:text-4xl font-black text-stone-900 mt-2">الهوكي ضد السرقة</h2>
-            <p class="text-stone-600 max-w-2xl mx-auto mt-4">
-                أتيلا كان حارس مرمى كارثي مع فريق "أويبست"، ولكن كان سارق عبقري. هنا مقارنة بالأرقام بين "الفشل فالرياضة" و "النجاح فالجريمة".
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <!-- Chart 1: Money Stolen -->
-            <div class="bg-white p-6 rounded-xl shadow-lg border border-stone-100 card-hover">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="font-bold text-xl text-stone-800">💰 الفلوس اللي سرق (بالمليون فورينت)</h3>
-                    <div class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-bold">المجموع: ~142 مليون</div>
-                </div>
-                <div class="chart-container">
-                    <canvas id="moneyChart"></canvas>
-                </div>
-                <p class="text-sm text-stone-500 mt-4 text-center">لاحظ كيفاش العمليات كبروا مع الوقت من 1993 لـ 1999</p>
-            </div>
-
-            <!-- Chart 2: Success Comparison -->
-            <div class="bg-white p-6 rounded-xl shadow-lg border border-stone-100 card-hover">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="font-bold text-xl text-stone-800">🥅 نسبة النجاح: رياضة vs جريمة</h3>
-                </div>
-                <div class="chart-container">
-                    <canvas id="successChart"></canvas>
-                </div>
-                <p class="text-sm text-stone-500 mt-4 text-center">المفارقة العجيبة: فاشل فالتيران، محترف فالسرقة</p>
-            </div>
-        </div>
-
-        <!-- The Loot Breakdown -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-stone-800 text-white p-6 rounded-lg text-center">
-                <div class="text-3xl mb-2">🏦</div>
-                <div class="text-2xl font-bold">27</div>
-                <div class="text-sm text-stone-400">بنكة ومكتب بريد</div>
-            </div>
-            <div class="bg-stone-800 text-white p-6 rounded-lg text-center">
-                <div class="text-3xl mb-2">🥃</div>
-                <div class="text-2xl font-bold">100%</div>
-                <div class="text-sm text-stone-400">شارب قبل العملية</div>
-            </div>
-            <div class="bg-stone-800 text-white p-6 rounded-lg text-center">
-                <div class="text-3xl mb-2">👮</div>
-                <div class="text-2xl font-bold">12</div>
-                <div class="text-sm text-stone-400">عام فالحبس</div>
-            </div>
-            <div class="bg-red-700 text-white p-6 rounded-lg text-center">
-                <div class="text-3xl mb-2">🏃‍♂️</div>
-                <div class="text-2xl font-bold">1</div>
-                <div class="text-sm text-red-200">هروب أسطوري</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Tools Section -->
-    <section class="bg-stone-900 text-stone-300 py-16">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/3">
-                    <h2 class="text-3xl font-bold text-white mb-4">أدوات الجريمة (The Kit)</h2>
-                    <p class="mb-6">أتيلا ما كانش كيستعمل العنف بزاف، ولكن كانت عندو طقوس خاصة وعجيبة. كليكي على الأدوات باش تعرف الدور ديالها.</p>
-                    <div class="grid grid-cols-2 gap-3" id="tools-grid">
-                        <!-- Generated JS -->
-                    </div>
-                </div>
-                <div class="w-full md:w-2/3 bg-stone-800 p-8 rounded-xl border border-stone-700 min-h-[300px] flex items-center justify-center relative">
-                    <div id="tool-detail" class="text-center">
-                        <span class="text-6xl block mb-4">🕵️</span>
-                        <h3 class="text-2xl font-bold text-white mb-2">اختار شي أداة</h3>
-                        <p>باش تكتشف الأسرار ديال "الويسكي روبير"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Aftermath & Redemption -->
-    <section id="aftermath" class="container mx-auto px-4 py-20 text-center">
-        <h2 class="text-4xl font-black text-stone-900 mb-8">حياة جديدة: من شفار لخزّاف</h2>
-        
-        <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-xl border-t-4 border-red-600">
-            <p class="text-lg leading-loose mb-6 text-stone-700">
-                بعد ما تشد فـ 1999، أتيلا هرب من الحبس فمغامرة هوليودية (استعمل حبل مصاوب من الشراوط). عاودو شدوه وحكمو عليه بـ 17 عام.
-                <br><br>
-                فوسط الحبس، قرر يتبدل. كمل قرايتو وتعلم حرفة <strong>الخزف (Ceramics)</strong>. خرج فـ 2012 كإنسان جديد.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <div class="bg-stone-50 p-4 rounded border border-stone-200">
-                    <div class="text-4xl mb-2">🏺</div>
-                    <h4 class="font-bold">صناعة الفخار</h4>
-                    <p class="text-xs text-stone-500 mt-2">ولا فنان كيبيع المنتوجات ديالو فالأسواق.</p>
-                </div>
-                <div class="bg-stone-50 p-4 rounded border border-stone-200">
-                    <div class="text-4xl mb-2">🎬</div>
-                    <h4 class="font-bold">فيلم سينمائي</h4>
-                    <p class="text-xs text-stone-500 mt-2">خرج فيلم على حياتو سميتو "The Whiskey Bandit" فـ 2017.</p>
-                </div>
-                <div class="bg-stone-50 p-4 rounded border border-stone-200">
-                    <div class="text-4xl mb-2">📖</div>
-                    <h4 class="font-bold">سيرة ذاتية</h4>
-                    <p class="text-xs text-stone-500 mt-2">كتب كتاب عاود فيه كلشي وتلقى نجاح كبير.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-stone-900 text-stone-500 py-8 text-center border-t border-stone-800">
-        <div class="container mx-auto">
-            <p class="mb-2 text-stone-400">تم إنشاء هذا التطبيق التفاعلي بناءً على قصة Attila Ambrus الحقيقية.</p>
-            <p class="text-sm">© 2023 Whiskey Robber Interactive Report</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript Logic -->
-    <script>
-        // --- DATA STORAGE ---
-        
-        // 1. Timeline Data
-        const timelineData = [
-            {
-                year: '1967',
-                title: 'الولادة فترانسيلفانيا',
-                desc: 'تزاد أتيلا أمبروس فرومانيا (ترانسيلفانيا). كانت طفولة صعيبة ومشاكل مع القانون وهو صغير.',
-                icon: '👶'
-            },
-            {
-                year: '1988',
-                title: 'الهروب للمجر',
-                desc: 'هرب من رومانيا الشيوعية وتخبى تحت التران باش يدخل للمجر. تما بدا حياة جديدة.',
-                icon: '🚆'
-            },
-            {
-                year: '1993',
-                title: 'أول سرقة (مكتب بريد)',
-                desc: 'بسبب الفقر، دار أول عملية سرقة لمكتب بريد. قبل ما يدخل، شرب كاس ويسكي باش يتكالمى. ومن هنا جات السمية.',
-                icon: '🔫'
-            },
-            {
-                year: '1996',
-                title: 'شهرة الجنتلمان',
-                desc: 'ولا مشهور فالصحافة. كان كيعطي الورد للموظفات وكيخلي قرعة نبيذ للبوليس. الشعب المجرّي تعاطف معاه.',
-                icon: '🌹'
-            },
-            {
-                year: '1999',
-                title: 'الاعتقال والهروب الكبير',
-                desc: 'تشد فواحد الحدود، ولكن هرب من الحبس بطريقة ذكية (نزل بالحبل من السور). بقا هارب 3 شهور وسرق 3 بنكات خرين.',
-                icon: '🏃'
-            },
-            {
-                year: '2002',
-                title: 'الحكم النهائي',
-                desc: 'تشد مرة ثانية وحكمو عليه بـ 17 عام. فالحبس قرر يغير حياتو وبدا يقرا ويتعلم الخزف.',
-                icon: '⚖️'
-            },
-            {
-                year: '2012',
-                title: 'الحرية',
-                desc: 'خرج من الحبس بسبب حسن السلوك. دابا هو خزّاف (Potter) معروف وعايش حياة طبيعية.',
-                icon: '🏺'
-            }
-        ];
-
-        // 2. Tools Data
-        const toolsData = [
-            { id: 1, name: 'الويسكي (Whiskey)', icon: '🥃', detail: 'العلامة المسجلة ديالو. كان كيشرب كاس فشي بار قريب من البنكة باش يحيد التوتر.' },
-            { id: 2, name: 'الورد (Flowers)', icon: '🌹', detail: 'بعض المرات، كان كيدي معاه بوكي دالورد وكيعطيه للكيسييرات قبل ما يدي الفلوس.' },
-            { id: 3, name: 'الباروكة (Wig)', icon: '💇‍♂️', detail: 'كان ديما كيبدل شكلو. باروكات، نضادر، وشلاغم اصطناعية باش ما تعقلوش الكاميرات.' },
-            { id: 4, name: 'سيارة أجرة (Taxi)', icon: '🚕', detail: 'الغريب أنه كان كيهرب ديما فتاكسي! كان كيخلص الشيفور مزيان وما كيعيقوش بيه.' }
-        ];
-
-        // 3. Chart Data
-        // Money Stolen over years (Approx in Million HUF)
-        const robberiesData = {
-            years: ['1993', '1994', '1995', '1996', '1997', '1998', '1999'],
-            amounts: [5, 12, 25, 30, 45, 15, 10] // Randomized logic based on story escalation
-        };
-
-        // --- UI LOGIC ---
-
-        // State
-        let currentTimelineIndex = 0;
-
-        // Init
-        document.addEventListener('DOMContentLoaded', () => {
-            initTimeline();
-            initTools();
-            initCharts();
-            renderTimelineContent(0);
-        });
-
-        // Navigation Scroll
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('mobile-menu').classList.add('hidden');
-        }
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
-        // Timeline Logic
-        function initTimeline() {
-            const nav = document.getElementById('timeline-nav');
-            
-            timelineData.forEach((item, index) => {
-                const btn = document.createElement('button');
-                btn.className = `timeline-point flex-shrink-0 px-6 py-2 rounded-full font-bold text-sm border-2 border-stone-300 hover:border-red-500 transition ${index === 0 ? 'bg-red-600 text-white border-red-600' : 'bg-white text-stone-600'}`;
-                btn.innerText = item.year;
-                btn.onclick = () => {
-                    updateActiveTimelineBtn(index);
-                    renderTimelineContent(index);
-                };
-                nav.appendChild(btn);
-            });
-        }
-
-        function updateActiveTimelineBtn(index) {
-            const btns = document.getElementById('timeline-nav').children;
-            Array.from(btns).forEach((btn, i) => {
-                if(i === index) {
-                    btn.className = 'timeline-point flex-shrink-0 px-6 py-2 rounded-full font-bold text-sm border-2 border-red-600 bg-red-600 text-white transition';
-                } else {
-                    btn.className = 'timeline-point flex-shrink-0 px-6 py-2 rounded-full font-bold text-sm border-2 border-stone-300 bg-white text-stone-600 hover:border-red-500 transition';
-                }
-            });
-        }
-
-        function renderTimelineContent(index) {
-            const container = document.getElementById('timeline-content');
-            const data = timelineData[index];
-            
-            // Adding a fade effect
-            container.style.opacity = '0';
-            setTimeout(() => {
-                container.innerHTML = `
-                    <div class="w-full md:w-1/3 flex items-center justify-center bg-stone-200 rounded-xl text-8xl shadow-inner">
-                        ${data.icon}
-                    </div>
-                    <div class="w-full md:w-2/3 flex flex-col justify-center">
-                        <span class="text-red-600 font-bold text-lg mb-2">${data.year}</span>
-                        <h3 class="text-3xl font-bold text-stone-900 mb-4">${data.title}</h3>
-                        <p class="text-lg text-stone-600 leading-relaxed">${data.desc}</p>
-                    </div>
-                `;
-                container.style.opacity = '1';
-            }, 200);
-        }
-
-        // Tools Logic
-        function initTools() {
-            const grid = document.getElementById('tools-grid');
-            toolsData.forEach(tool => {
-                const div = document.createElement('div');
-                div.className = 'bg-stone-800 p-4 rounded border border-stone-600 cursor-pointer hover:bg-stone-700 transition flex items-center gap-3';
-                div.innerHTML = `<span class="text-2xl">${tool.icon}</span> <span class="font-bold text-sm">${tool.name}</span>`;
-                div.onclick = () => showToolDetail(tool);
-                grid.appendChild(div);
-            });
-        }
-
-        function showToolDetail(tool) {
-            const detailDiv = document.getElementById('tool-detail');
-            detailDiv.innerHTML = `
-                <div class="animate-pulse">
-                    <span class="text-6xl block mb-4">${tool.icon}</span>
-                    <h3 class="text-2xl font-bold text-red-400 mb-2">${tool.name}</h3>
-                    <p class="text-lg text-stone-300 max-w-md mx-auto">${tool.detail}</p>
-                </div>
-            `;
-        }
-
-        // Chart.js Implementations
-        function initCharts() {
-            // Chart 1: Money Stolen
-            const ctx1 = document.getElementById('moneyChart').getContext('2d');
-            new Chart(ctx1, {
-                type: 'bar',
-                data: {
-                    labels: robberiesData.years,
-                    datasets: [{
-                        label: 'المبلغ المسروق (مليون فورينت)',
-                        data: robberiesData.amounts,
-                        backgroundColor: '#dc2626',
-                        borderRadius: 4,
-                        barThickness: 20
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.raw + ' مليون فورينت';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: { color: '#e7e5e4' }
-                        },
-                        x: {
-                            grid: { display: false }
-                        }
-                    }
-                }
-            });
-
-            // Chart 2: Success Comparison (Donut)
-            const ctx2 = document.getElementById('successChart').getContext('2d');
-            new Chart(ctx2, {
-                type: 'doughnut',
-                data: {
-                    labels: ['نسبة صد الكرات (هوكي)', 'نسبة نجاح السرقة', 'هروب من الشرطة'],
-                    datasets: [{
-                        data: [10, 97, 50], // Joke data: 10% save rate (terrible), 97% robbery success
-                        backgroundColor: [
-                            '#d6d3d1', // Stone 300 (Grey - Bad)
-                            '#dc2626', // Red 600 (Red - Good/Crime)
-                            '#1c1917'  // Stone 900 (Black - Escape)
-                        ],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                font: { family: 'Cairo' }
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    if (context.label.includes('هوكي')) return ' ~10% (حارس ضعيف جداً)';
-                                    if (context.label.includes('السرقة')) return ' 29 من أصل 30 عملية ناجحة';
-                                    return ' هرب مرة وحدة من أصل جوج اعتقالات';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    </script>
 </body>
 </html>
