@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أتيلا أمبروس: الويسكي روبير</title>
+    <title>The Whiskey Robber</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -11,13 +11,21 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Harmattan:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Harmattan:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         body {
-            /* هنا بدلنا الخط بـ Harmattan */
             font-family: 'Harmattan', sans-serif;
-            background-color: #f5f5f4; /* warm gray 100 */
+            background-color: #f5f5f4;
+        }
+
+        /* كلاس خاص بالعنوان الإنجليزي */
+        .english-title {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+            /* باش يجي اتجاه الكتابة من اليسار لليمين فالكلمات الإنجليزية */
+            direction: ltr; 
+            display: inline-block;
         }
         
         /* Custom Scrollbar */
@@ -50,12 +58,6 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        
-        .tab-active {
-            border-bottom: 3px solid #dc2626; /* red-600 */
-            color: #dc2626;
-            font-weight: 700;
-        }
 
         .timeline-point {
             transition: all 0.3s ease;
@@ -65,7 +67,6 @@
             background-color: #dc2626;
         }
         
-        /* زيادة حجم الخط قليلاً لأن الخط المغربي يظهر أصغر */
         h1, h2, h3, h4 {
             line-height: 1.4;
         }
@@ -75,9 +76,9 @@
 
     <nav class="bg-stone-900 text-stone-100 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="font-bold text-xl md:text-3xl flex items-center gap-2">
-                <span>🥃</span>
-                <span>الويسكي روبير</span>
+            <div class="flex items-center gap-3">
+                <span class="text-2xl">🥃</span>
+                <span class="english-title text-2xl md:text-3xl text-white tracking-wider">The Whiskey Robber</span>
             </div>
             <div class="hidden md:flex gap-6 text-lg font-semibold">
                 <button onclick="scrollToSection('hero')" class="hover:text-red-400 transition">البداية</button>
@@ -102,7 +103,7 @@
                 <span class="inline-block bg-red-600 text-white px-3 py-1 rounded-full text-base font-bold tracking-wide">قصة حقيقية</span>
                 <h1 class="text-5xl md:text-7xl font-black leading-tight text-stone-900">
                     أتيلا أمبروس <br>
-                    <span class="text-red-700">الويسكي روبير</span>
+                    <span class="text-red-700 english-title text-6xl md:text-8xl mt-2">The Whiskey Robber</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-stone-700 leading-relaxed font-medium">
                     من حارس مرمى فاشل فالهوكي لأشهر سارق بنكات فالمجر. كان كيشرب كاس ديال الويسكي قبل كل سرقة، وكيعطي الورد للموظفات. هادي هي قصة "الجنتلمان الشفار".
@@ -131,7 +132,7 @@
                         </div>
                         <div class="flex justify-between border-b border-dotted border-stone-400 pb-2">
                             <span class="text-stone-500">اللقب:</span>
-                            <span class="font-bold">الويسكي روبير</span>
+                            <span class="font-bold english-title text-xl">The Whiskey Robber</span>
                         </div>
                         <div class="flex justify-between border-b border-dotted border-stone-400 pb-2">
                             <span class="text-stone-500">المهنة:</span>
@@ -164,7 +165,7 @@
                     <h2 class="text-4xl font-black text-stone-900 mb-2">الخط الزمني للأحداث</h2>
                     <p class="text-stone-500 text-lg">كليكي على السنوات باش تعرف شنو وقع</p>
                 </div>
-                <div class="text-5xl text-stone-200 hidden md:block font-black">1967 - 2012</div>
+                <div class="text-5xl text-stone-200 hidden md:block font-black english-title">1967 - 2012</div>
             </div>
 
             <div class="flex gap-4 overflow-x-auto pb-6 mb-8 no-scrollbar" id="timeline-nav">
@@ -210,22 +211,22 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="bg-stone-800 text-white p-6 rounded-lg text-center">
                 <div class="text-3xl mb-2">🏦</div>
-                <div class="text-3xl font-bold">27</div>
+                <div class="text-3xl font-bold english-title">27</div>
                 <div class="text-lg text-stone-400">بنكة ومكتب بريد</div>
             </div>
             <div class="bg-stone-800 text-white p-6 rounded-lg text-center">
                 <div class="text-3xl mb-2">🥃</div>
-                <div class="text-3xl font-bold">100%</div>
+                <div class="text-3xl font-bold english-title">100%</div>
                 <div class="text-lg text-stone-400">شارب قبل العملية</div>
             </div>
             <div class="bg-stone-800 text-white p-6 rounded-lg text-center">
                 <div class="text-3xl mb-2">👮</div>
-                <div class="text-3xl font-bold">12</div>
+                <div class="text-3xl font-bold english-title">12</div>
                 <div class="text-lg text-stone-400">عام فالحبس</div>
             </div>
             <div class="bg-red-700 text-white p-6 rounded-lg text-center">
                 <div class="text-3xl mb-2">🏃‍♂️</div>
-                <div class="text-3xl font-bold">1</div>
+                <div class="text-3xl font-bold english-title">1</div>
                 <div class="text-lg text-red-200">هروب أسطوري</div>
             </div>
         </div>
@@ -244,7 +245,7 @@
                     <div id="tool-detail" class="text-center">
                         <span class="text-6xl block mb-4">🕵️</span>
                         <h3 class="text-3xl font-bold text-white mb-2">اختار شي أداة</h3>
-                        <p class="text-xl">باش تكتشف الأسرار ديال "الويسكي روبير"</p>
+                        <p class="text-xl">باش تكتشف الأسرار ديال <span class="english-title text-red-400">The Whiskey Robber</span></p>
                     </div>
                 </div>
             </div>
@@ -270,7 +271,7 @@
                 <div class="bg-stone-50 p-4 rounded border border-stone-200">
                     <div class="text-4xl mb-2">🎬</div>
                     <h4 class="font-bold text-xl">فيلم سينمائي</h4>
-                    <p class="text-base text-stone-500 mt-2">خرج فيلم على حياتو سميتو "The Whiskey Bandit" فـ 2017.</p>
+                    <p class="text-base text-stone-500 mt-2">خرج فيلم على حياتو سميتو <span class="english-title font-bold text-red-700">The Whiskey Bandit</span> فـ 2017.</p>
                 </div>
                 <div class="bg-stone-50 p-4 rounded border border-stone-200">
                     <div class="text-4xl mb-2">📖</div>
@@ -283,8 +284,8 @@
 
     <footer class="bg-stone-900 text-stone-500 py-8 text-center border-t border-stone-800">
         <div class="container mx-auto">
-            <p class="mb-2 text-stone-400 text-lg">تم إنشاء هذا التطبيق التفاعلي بناءً على قصة Attila Ambrus الحقيقية.</p>
-            <p class="text-sm">© 2023 Whiskey Robber Interactive Report</p>
+            <p class="mb-2 text-stone-400 text-lg">تم إنشاء هذا التطبيق التفاعلي بناءً على قصة <span class="english-title">Attila Ambrus</span> الحقيقية.</p>
+            <p class="text-sm">© 2023 <span class="english-title">Whiskey Robber</span> Interactive Report</p>
         </div>
     </footer>
 
@@ -382,6 +383,8 @@
             timelineData.forEach((item, index) => {
                 const btn = document.createElement('button');
                 btn.className = `timeline-point flex-shrink-0 px-6 py-2 rounded-full font-bold text-lg border-2 border-stone-300 hover:border-red-500 transition ${index === 0 ? 'bg-red-600 text-white border-red-600' : 'bg-white text-stone-600'}`;
+                // English font for the years
+                btn.classList.add('english-title'); 
                 btn.innerText = item.year;
                 btn.onclick = () => {
                     updateActiveTimelineBtn(index);
@@ -395,9 +398,9 @@
             const btns = document.getElementById('timeline-nav').children;
             Array.from(btns).forEach((btn, i) => {
                 if(i === index) {
-                    btn.className = 'timeline-point flex-shrink-0 px-6 py-2 rounded-full font-bold text-lg border-2 border-red-600 bg-red-600 text-white transition';
+                    btn.className = 'timeline-point english-title flex-shrink-0 px-6 py-2 rounded-full font-bold text-lg border-2 border-red-600 bg-red-600 text-white transition';
                 } else {
-                    btn.className = 'timeline-point flex-shrink-0 px-6 py-2 rounded-full font-bold text-lg border-2 border-stone-300 bg-white text-stone-600 hover:border-red-500 transition';
+                    btn.className = 'timeline-point english-title flex-shrink-0 px-6 py-2 rounded-full font-bold text-lg border-2 border-stone-300 bg-white text-stone-600 hover:border-red-500 transition';
                 }
             });
         }
@@ -414,7 +417,7 @@
                         ${data.icon}
                     </div>
                     <div class="w-full md:w-2/3 flex flex-col justify-center">
-                        <span class="text-red-600 font-bold text-xl mb-2">${data.year}</span>
+                        <span class="text-red-600 font-bold text-2xl mb-2 english-title">${data.year}</span>
                         <h3 class="text-4xl font-bold text-stone-900 mb-4">${data.title}</h3>
                         <p class="text-xl text-stone-600 leading-relaxed">${data.desc}</p>
                     </div>
@@ -481,11 +484,11 @@
                         y: {
                             beginAtZero: true,
                             grid: { color: '#e7e5e4' },
-                            ticks: { font: { family: 'Harmattan' } }
+                            ticks: { font: { family: 'Anton' } } // English font for numbers
                         },
                         x: {
                             grid: { display: false },
-                            ticks: { font: { family: 'Harmattan', size: 14 } }
+                            ticks: { font: { family: 'Anton', size: 14 } } // English font for years
                         }
                     }
                 }
@@ -514,7 +517,7 @@
                         legend: {
                             position: 'bottom',
                             labels: {
-                                font: { family: 'Harmattan', size: 16 } // تحديث الخط هنا
+                                font: { family: 'Harmattan', size: 16 }
                             }
                         },
                         tooltip: {
