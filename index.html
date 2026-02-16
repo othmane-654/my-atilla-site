@@ -37,10 +37,20 @@
             box-shadow: 0 0 30px rgba(229, 9, 20, 0.2);
         }
 
-        .hide-scroll::-webkit-scrollbar { height: 6px; }
-        .hide-scroll::-webkit-scrollbar-track { background: #111; }
-        .hide-scroll::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-        .hide-scroll::-webkit-scrollbar-thumb:hover { background: #e50914; }
+        /* Improved Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e50914;
+        }
 
         .modal-animate {
             animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -87,7 +97,7 @@
                 <li><a href="#impact" class="hover:text-white transition">الأثر</a></li>
             </ul>
             <div class="flex items-center gap-4">
-                <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest border border-gray-800 px-2 py-1 rounded">V 2.6 - FULL DATA</span>
+                <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest border border-gray-800 px-2 py-1 rounded">V 2.7 - SCROLL FIXED</span>
             </div>
         </div>
     </nav>
@@ -134,16 +144,15 @@
             <div class="flex items-end justify-between mb-10">
                 <div>
                     <h2 class="text-4xl font-black text-white uppercase tracking-tighter">أرشيف المحطات الرئيسية</h2>
-                    <p class="text-gray-500 font-bold text-xs tracking-widest uppercase mt-2 italic">تحذير: يحتوي هذا القسم على تفاصيل جنائية دقيقة</p>
+                    <p class="text-gray-500 font-bold text-xs tracking-widest uppercase mt-2 italic">انقر على الفصل لفتح الأرشيف - متاح السكرول الآن</p>
                 </div>
             </div>
             
-            <div class="flex gap-6 overflow-x-auto hide-scroll pb-10 snap-x">
+            <div class="flex gap-6 overflow-x-auto pb-10 snap-x">
                 
                 <!-- Card 1: Roots -->
                 <div onclick="openModal(1)" class="min-w-[320px] md:min-w-[450px] bg-[#141414] rounded-sm episode-card snap-center group relative border-b-2 border-transparent hover:border-accent transition-all shadow-2xl">
                     <div class="relative h-64 w-full overflow-hidden">
-                        <!-- Corrected Google Drive Link Format -->
                         <img src="https://lh3.googleusercontent.com/d/1VTnPB9_QNS6log07dqaIgQm4utUOd-v6" alt="الهروب بالقطار" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000 image-glow" onerror="this.src='https://img.youtube.com/vi/L8rqSB0sjQ4/maxresdefault.jpg'">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
                         <div class="absolute top-4 left-4 bg-accent text-white text-[10px] font-black px-2 py-1">ملف 01</div>
@@ -177,7 +186,7 @@
                 </div>
 
                 <!-- Card 3: The Heists -->
-                <div onclick="openModal(3)" class="min-w-[320px] md:min-w-[450px] bg-[#141414] rounded-sm episode-card snap-center group relative border-b-2 border-accent transition-all shadow-2xl">
+                <div onclick="openModal(3)" class="min-w-[320px] md:min-w-[450px] bg-[#141414] rounded-sm episode-card snap-center group relative border-b-2 border-transparent hover:border-accent transition-all shadow-2xl">
                     <div class="relative h-64 w-full bg-zinc-900 flex items-center justify-center overflow-hidden">
                         <span class="text-[10rem] opacity-5 font-black absolute">💰</span>
                         <div class="text-center z-10">
@@ -247,7 +256,7 @@
                         <span class="absolute -right-4 -top-4 text-6xl opacity-5 group-hover:opacity-10 transition">🎩</span>
                         <h4 class="text-white font-black mb-4 text-xl tracking-tighter">2. تكتيك "الجنتلمان" المضلل</h4>
                         <p class="text-gray-500 text-sm font-light leading-loose">
-                            استخدام الورد لم يكن مجرد لطف، بل تكتيكاً نفسياً (Psychological Priming). الموظفات كن يشعرن بـ "الأمان النسبي" مما يقلل من احتمالية القيام برد فعل عنيف أو مفاجئ، وهو ما ضمن له 0 ضحايا.
+                            استخدام الورد لم يكن مجرد لطف، بل تكتيكاً نفسياً. الموظفات كن يشعرن بـ "الأمان النسبي" مما يقلل من احتمالية القيام برد فعل عنيف أو مفاجئ.
                         </p>
                     </div>
                 </div>
@@ -288,7 +297,7 @@
             <div class="text-center space-y-6">
                 <h2 class="text-5xl font-black text-white uppercase tracking-tighter">الأثر الثقافي: من مجرم إلى بطل</h2>
                 <p class="text-gray-400 max-w-3xl mx-auto text-lg font-light leading-relaxed">
-                    لماذا صوت 80% من الهنغاريين لصالح أتيلا في استطلاعات الرأي؟ الجواب يكمن في سخط الشعب على "الرأسمالية المتوحشة" التي نهبت مدخراتهم، فصار أتيلا يمثل "الانتقام الشعبي".
+                    لماذا صوت 80% من الهنغاريين لصالح أتيلا؟ الجواب يكمن في سخط الشعب على "الرأسمالية المتوحشة" التي نهبت مدخراتهم، فصار أتيلا يمثل "الانتقام الشعبي".
                 </p>
             </div>
 
@@ -297,21 +306,21 @@
                     <span class="text-3xl mb-6 block">🎬</span>
                     <h4 class="text-white font-black mb-4 uppercase text-sm">فيلم "A Viszkis"</h4>
                     <p class="text-gray-500 text-xs font-light leading-loose">
-                        فيلم 2017 للمخرج نمرود أنتال. الفيلم ليس مجرد سيرة ذاتية، بل دراسة سينمائية لتلك الحقبة. أتيلا نفسه ظهر في الفيلم كـ "كاميو" (ضيف شرف).
+                        فيلم 2017 للمخرج نمرود أنتال. الفيلم ليس مجرد سيرة ذاتية، بل دراسة سينمائية لتلك الحقبة. أتيلا نفسه ظهر في الفيلم كـ "كاميو".
                     </p>
                 </div>
                 <div class="bg-zinc-900/40 p-10 border border-white/5 relative group hover:bg-zinc-900 transition">
                     <span class="text-3xl mb-6 block">📚</span>
                     <h4 class="text-white font-black mb-4 uppercase text-sm">كتاب جوليان روبنشتاين</h4>
                     <p class="text-gray-500 text-xs font-light leading-loose">
-                        كتاب "Ballad of the Whiskey Robber" الذي صار من الكتب الأكثر مبيعاً، ووصف أتيلا بأنه "الرجل الذي يسرق البنوك ليمول فشله في الهوكي".
+                        كتاب "Ballad of the Whiskey Robber" الذي صار من الكتب الأكثر مبيعاً، ووصف أتيلا بأنه "الرجل الذي يسرق البنوك ليمول فشله".
                     </p>
                 </div>
                 <div class="bg-zinc-900/40 p-10 border border-white/5 relative group hover:bg-zinc-900 transition">
                     <span class="text-3xl mb-6 block">🏺</span>
                     <h4 class="text-white font-black mb-4 uppercase text-sm">براند الخزف</h4>
                     <p class="text-gray-500 text-xs font-light leading-loose">
-                        اليوم، أعماله الخزفية تباع بأسعار مرتفعة. الناس لا يشترون "طين"، بل يشترون "قطعة من التاريخ" لرجل غيّر حياته بالكامل.
+                        اليوم، أعماله الخزفية تباع بأسعار مرتفعة. الناس لا يشترون "طين"، بل يشترون "قطعة من التاريخ" لرجل غيّر حياته.
                     </p>
                 </div>
             </div>
@@ -334,13 +343,14 @@
     <div id="episodeModal" style="display: none;" class="fixed inset-0 z-[60]">
         <div class="absolute inset-0 bg-black/98 backdrop-blur-3xl transition-opacity duration-300" onclick="closeModal()"></div>
         
-        <div id="modalBox" class="absolute top-1/2 left-1/2 w-11/12 max-w-4xl bg-[#141414] shadow-[0_0_150px_rgba(229,9,20,0.15)] overflow-hidden rounded-sm" style="transform: translate(-50%, -50%);">
+        <!-- Modal Box now with internal scroll -->
+        <div id="modalBox" class="absolute top-1/2 left-1/2 w-11/12 max-w-4xl bg-[#141414] shadow-[0_0_150px_rgba(229,9,20,0.15)] overflow-y-auto max-h-[90vh] rounded-sm" style="transform: translate(-50%, -50%);">
             
-            <button onclick="closeModal()" class="absolute top-8 left-8 z-[70] bg-white/5 hover:bg-accent text-white p-4 transition-all rounded-full group">
+            <button onclick="closeModal()" class="sticky top-8 right-8 float-right z-[70] bg-white/5 hover:bg-accent text-white p-4 transition-all rounded-full group mr-8 mt-8">
                 <svg class="w-6 h-6 group-hover:rotate-90 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
 
-            <div id="modalContent" class="text-white h-full">
+            <div id="modalContent" class="text-white w-full clear-both">
                 <!-- Content injected via JS -->
             </div>
         </div>
@@ -353,7 +363,7 @@
                 year: "1967 - 1988",
                 image: "https://lh3.googleusercontent.com/d/1VTnPB9_QNS6log07dqaIgQm4utUOd-v6",
                 content: `
-                    <div class="p-12 space-y-8 max-h-[85vh] overflow-y-auto hide-scroll">
+                    <div class="p-12 space-y-8">
                         <div class="flex items-center gap-4">
                             <span class="bg-accent text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest">تاريخ الميلاد: 6 أكتوبر 1967</span>
                         </div>
@@ -376,6 +386,7 @@
                                 </p>
                             </div>
                         </div>
+                        <div class="h-10"></div> <!-- Extra space for scrolling -->
                     </div>
                 `
             },
@@ -389,29 +400,30 @@
                         </div>
                         <h2 class="text-5xl font-black leading-tight uppercase tracking-tighter italic">أسوأ حارس مرمى فالتاريخ</h2>
                         <p class="text-gray-400 text-lg leading-relaxed font-light">
-                            أتيلا كان باغي يولي بطل رياضي. انضم لفريق أويبيست (UTE) للهوكي. واخا ما كانش كيعرف يحرس المرمى مزيان، قبلوه حيت كان مستعد يخدم بواب (Janitor) ومنظف التيران (Zamboni driver) فابور.
+                            أتيلا كان باغي يولي بطل رياضي. انضم لفريق أويبيست للهوكي. قبلوه حيت كان مستعد يخدم بواب ومنظف التيران فابور.
                         </p>
                         <div class="grid md:grid-cols-3 gap-6">
                             <div class="bg-zinc-900 p-6 border-b-2 border-accent">
                                 <span class="text-3xl block mb-2">🥅</span>
                                 <h4 class="text-white font-black text-xs uppercase mb-2">الماتش المشهور</h4>
                                 <p class="text-2xl font-black text-accent">23 هدف</p>
-                                <p class="text-[10px] text-gray-500 mt-1 uppercase">فـ مباراة واحدة ضد فريق محترف</p>
+                                <p class="text-[10px] text-gray-500 mt-1 uppercase">فـ مباراة واحدة</p>
                             </div>
                             <div class="bg-zinc-900 p-6 border-b-2 border-white/10">
                                 <span class="text-3xl block mb-2">📉</span>
                                 <h4 class="text-white font-black text-xs uppercase mb-2">المجموع الكارثي</h4>
                                 <p class="text-2xl font-black text-white">88 هدف</p>
-                                <p class="text-[10px] text-gray-500 mt-1 uppercase">دخلوا فيه فـ 5 مباريات متتالية</p>
+                                <p class="text-[10px] text-gray-500 mt-1 uppercase">فـ 5 مباريات</p>
                             </div>
                             <div class="bg-zinc-900 p-6 border-b-2 border-accent">
                                 <span class="text-3xl block mb-2">🧹</span>
                                 <h4 class="text-white font-black text-xs uppercase mb-2">الوظيفة الحقيقية</h4>
                                 <p class="text-sm font-bold text-white">منظف التلج</p>
-                                <p class="text-[10px] text-gray-500 mt-1 uppercase">كان كيسوق ماكينة الزامبوني</p>
+                                <p class="text-[10px] text-gray-500 mt-1 uppercase">سائق الزامبوني</p>
                             </div>
                         </div>
-                        <p class="text-gray-500 italic text-sm text-center">"ملي كيكون غادي بالماكينة د التلج، كان كيراقب البنك اللي قريب من التيران ويخطط للعملية رقم 1."</p>
+                        <p class="text-gray-500 italic text-sm text-center">"ملي كيكون غادي بالماكينة، كان كيراقب البنك ويخطط للعملية رقم 1."</p>
+                        <div class="h-10"></div>
                     </div>
                 `
             },
@@ -419,35 +431,35 @@
                 title: "عصر الويسكي والورد",
                 year: "1993 - 1999",
                 content: `
-                    <div class="p-12 space-y-8 max-h-[85vh] overflow-y-auto hide-scroll">
+                    <div class="p-12 space-y-8">
                         <div class="flex items-center gap-4">
                             <span class="bg-accent text-white text-[10px] font-black px-4 py-1 rounded-full uppercase">إجمالي السرقات: 29</span>
                         </div>
                         <h2 class="text-5xl font-black leading-tight uppercase tracking-tighter italic">السطو بـ "أناقة"</h2>
                         <p class="text-gray-400 text-lg leading-relaxed font-light">
-                            أتيلا دار 29 عملية سطو ناجحة فـ 6 سنين. ولى "شخصية أسطورية" فـ بودابست بسبب الستيل ديالو الغريب.
+                            أتيلا دار 29 عملية سطو ناجحة فـ 6 سنين. ولى شخصية أسطورية فـ بودابست بسبب الستيل ديالو الغريب.
                         </p>
                         <div class="grid md:grid-cols-2 gap-10">
                             <div class="bg-[#1a1a1a] p-8 rounded-sm relative group overflow-hidden">
                                 <span class="absolute right-4 top-4 text-4xl opacity-10">🥃</span>
                                 <h4 class="text-white font-black mb-4 uppercase text-sm tracking-widest">طقس الويسكي:</h4>
                                 <p class="text-sm text-gray-500 leading-loose italic">
-                                    كان كيدخل لبار قريب من البنك، كيضرب كاس (Shot) د الويسكي جوني ووكر باش "يقاد المكانة". الرائحة د الويسكي ولات هي "العلامة المسجلة" ديالو فالبوليس.
+                                    كان كيدخل لبار قريب، كيضرب كاس د الويسكي جوني ووكر باش "يقاد المكانة". الرائحة ولات هي العلامة ديالو.
                                 </p>
                             </div>
                             <div class="bg-[#1a1a1a] p-8 rounded-sm relative group overflow-hidden">
                                 <span class="absolute right-4 top-4 text-4xl opacity-10">🌹</span>
                                 <h4 class="text-white font-black mb-4 uppercase text-sm tracking-widest">طقس الورد:</h4>
                                 <p class="text-sm text-gray-500 leading-loose italic">
-                                    ملي كيدخل يسرق، كيعطي بوكي د الورد للموظفة. كان كيتجنب العنف بكل الطرق. ما عمرو قتل أو جرح شي حد. كان كيقول: "أنا كنشفر لبنكة، ماشي الشعب".
+                                    ملي كيدخل يسرق، كيعطي بوكي د الورد للموظفة. كان كيتجنب العنف. كان كيقول: "أنا كنشفر لبنكة، ماشي الشعب".
                                 </p>
                             </div>
                         </div>
                         <div class="bg-accent/10 p-8 text-center border border-accent/20">
                             <h4 class="text-accent font-black mb-2 uppercase text-[10px] tracking-widest">السفريات الفاخرة:</h4>
                             <p class="text-xl font-bold text-white">مصر، اليابان، تايلاند، والولايات المتحدة.</p>
-                            <p class="text-[10px] text-gray-500 mt-2">كان كيخسر كاع الفلوس فـ أسابيع ويرجع يسرق بنكة أخرى.</p>
                         </div>
+                        <div class="h-10"></div>
                     </div>
                 `
             },
@@ -461,20 +473,21 @@
                             <h2 class="text-6xl font-black leading-tight uppercase tracking-tighter italic">الحبل المستحيل</h2>
                         </div>
                         <p class="text-gray-400 text-lg leading-relaxed font-light text-center">
-                            اعتقلوه فـ يناير 1999، ولكن أتيلا ما كانش ناوي يبقى لداخل. دار أغرب عملية هروب فشهداتها المجر.
+                            اعتقلوه فـ يناير 1999، ولكن أتيلا دار أغرب عملية هروب فشهداتها المجر.
                         </p>
                         <div class="bg-black p-10 border border-white/5 relative">
                             <h4 class="text-white font-black mb-8 uppercase text-xs tracking-widest">مكونات حبل الهروب:</h4>
                             <div class="grid grid-cols-2 gap-4 text-sm font-bold">
                                 <div class="flex items-center gap-3 text-gray-500"><span class="w-3 h-3 bg-accent rounded-full"></span> شراشف السرير (الليزور)</div>
-                                <div class="flex items-center gap-3 text-gray-500"><span class="w-3 h-3 bg-accent rounded-full"></span> كابلات الهواتف المسروقة</div>
+                                <div class="flex items-center gap-3 text-gray-500"><span class="w-3 h-3 bg-accent rounded-full"></span> كابلات الهواتف</div>
                                 <div class="flex items-center gap-3 text-gray-500"><span class="w-3 h-3 bg-accent rounded-full"></span> كابلات الحواسيب</div>
                                 <div class="flex items-center gap-3 text-gray-500"><span class="w-3 h-3 bg-accent rounded-full"></span> خيوط الأحذية</div>
                             </div>
                             <p class="mt-10 text-gray-400 leading-loose italic text-sm">
-                                هبط من الطابق الرابع (15 متر) فواحد السجن اللي كيتعتبر "أأمن سجن فالمجر". ملي هبط، دوز 3 شهور وهو هارب (On the run). فهاديك الـ 3 شهور، دار <span class="text-accent font-bold">3 سرقات أخرى</span> باش يعيش. الشعب ولى كيخرج للزنقة بـ تيشورتات مكتوب عليها "Go Whiskey Robber!".
+                                هبط من الطابق الرابع (15 متر) فواحد السجن آمن. ملي هبط، دوز 3 شهور هارب. دار 3 سرقات أخرى باش يعيش.
                             </p>
                         </div>
+                        <div class="h-10"></div>
                     </div>
                 `
             },
@@ -486,7 +499,7 @@
                         <span class="text-green-600 font-black text-xs uppercase tracking-widest">الوضع الحالي: حر / فنان</span>
                         <h2 class="text-5xl font-black leading-tight uppercase tracking-tighter italic">أتيلا سيراميك</h2>
                         <p class="text-gray-400 text-lg leading-relaxed font-light max-w-2xl mx-auto">
-                            دوز 13 عام فالحبس. تما تعلم حرفة الخزف (Pottery) ودار ديبلومات فالسوسيولوجيا. اليوم، أتيلا ولى "فنان" ناجح كيدير معارض فـ أوروبا كاملة.
+                            دوز 13 عام فالحبس. تعلم حرفة الخزف. اليوم، أتيلا ولى فنان ناجح كيدير معارض فـ أوروبا كاملة.
                         </p>
                         <div class="inline-block bg-white/5 p-10 border-b-4 border-green-600 shadow-2xl">
                              <h4 class="text-white font-black mb-4 uppercase text-xs tracking-widest">فلسفة أتيلا اليوم:</h4>
@@ -495,13 +508,14 @@
                         <div class="grid md:grid-cols-2 gap-6 mt-10 text-right">
                             <div class="bg-[#1a1a1a] p-6">
                                 <h4 class="text-white font-bold mb-2">المحاضرات:</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed italic">الشركات الكبرى كيعيطو عليه يدير محاضرات (Motivational speaking) للموظفين باش يعلمهم كيفاش ينوضو من بعد الفشل.</p>
+                                <p class="text-xs text-gray-500 leading-relaxed italic">الشركات الكبرى كيعيطو عليه يدير محاضرات تحفيزية للموظفين.</p>
                             </div>
                             <div class="bg-[#1a1a1a] p-6">
                                 <h4 class="text-white font-bold mb-2">العائلة:</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed italic">اليوم هو أب وعايش حياة هادئة فواحد القرية صغيرة، بعيد على الصداع د بودابست ود السجون.</p>
+                                <p class="text-xs text-gray-500 leading-relaxed italic">اليوم هو أب وعايش حياة هادئة فواحد القرية صغيرة.</p>
                             </div>
                         </div>
+                        <div class="h-10"></div>
                     </div>
                 `
             }
@@ -519,14 +533,14 @@
 
             let headerHtml = '';
             if (data.image) {
-                // Using lh3.googleusercontent.com format for direct images
                 headerHtml = `<div class="relative h-72"><img src="${data.image}" class="w-full h-full object-cover" alt="${data.title}" onerror="this.src='https://img.youtube.com/vi/L8rqSB0sjQ4/maxresdefault.jpg'"><div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div></div>`;
             }
 
             contentDiv.innerHTML = headerHtml + data.content;
             modal.style.display = 'block';
             
-            // Animation reset
+            // Animation reset and reset scroll position to top
+            modalBox.scrollTop = 0;
             modalBox.classList.remove('modal-animate');
             void modalBox.offsetWidth;
             modalBox.classList.add('modal-animate');
